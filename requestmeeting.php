@@ -1,21 +1,33 @@
+
 <?php 
 include 'connection.php';
-if(!empty($_SESSION['id'])) {
-    $id = $_SESSION['id'];
-    $type = $_SESSION['type'];
-    if($type == 'student') {
-        $result = mysqli_query($conn, "SELECT * FROM student_account WHERE studentid = $id");
-        $row = mysqli_fetch_assoc($result);
-    }
-    else {
-        $result = mysqli_query($conn, "SELECT * FROM tutor_account WHERE tutorid = $id");
-        $row = mysqli_fetch_assoc($result);
-    }
-    
+if(isset($_SESSION['id'])) {
+  $tutorid = $_GET['id'];
+$studentid = $_SESSION['id'];
+$result = mysqli_query($conn, "SELECT * FROM student_account WHERE studentid = '$studentid'");
+$result2 = mysqli_fetch_assoc($result);
+$studentname = $result2['username'];
+$grade = $result2['grade'];
+
+
+
+$result3 = mysqli_query($conn, "SELECT * FROM tutor_account WHERE tutorid = '$tutorid'");
+$result4 = mysqli_fetch_assoc($result3);
+$tutorname = $result4['username'];
+
+
+if(isset($_POST['submit'])) {
+  $subject = $_POST['subject'];
+    $requestdescription = $_POST['requestdescription'];
+    mysqli_query($conn, "INSERT INTO meeting_request VALUES('', '$studentid', '$studentname', '$grade', '$subject', '$requestdescription', '$tutorid', '$tutorname')");
+    header ('location: teacheravailability.php');
+}
 }
 else {
-    header('location: account login.php');
+  header ('location: signup.php');
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +43,10 @@ else {
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="account.css">
+        <link rel="stylesheet" href="request.css">
+
+
 
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -153,28 +169,67 @@ else {
             </div>
         </nav>
 
+
+
         
+
+
+
+        
+        <div class="main-container">
+    <center><div class="main-header" style="margin-top: 100px; font-size:45px; margin-bottom: 30px;">Request A Meeting.</div></center>
+    <center><div class="sub-header" style="margin-top: 10px; font-size:22px; margin-bottom: 100px; margin-right: 150px; margin-left: 150px;">You selected a teacher to request a meeting with. Write a request description on the subject you want to learn about and wait for your teacher to respond to you. Your requests will be reset every single day, and can be viewed in the 'your meetings' page</div></center>
+    
+    <div class="contact-section">
         <div class="container">
-                <center><b><div class="header" style="margin-top: 100px; font-size:45px; margin-bottom: 30px;">Account details.</div></b></center>
-                
-            
-                <div class="row">
-                    <div class="col">
-                        <?php
-                        echo("<p style='margin-bottom:20px;'><strong>Username: </strong>".$row['username']."</p>");
-                        echo ("<br>");
-                        echo("<p style='margin-bottom:20px;'><strong>Email: </strong>".$row['email']."</p>");
-                        echo ("<br>");
-                        echo("<p style='margin-bottom:20px;'><strong>Password: </strong>".$row['password']."</p>");
-                        echo ("<br>");
-                        ?>
-                <a href="logout.php">Logout</a>
+            <div class="row">
+                <div class="col-xl-7 col-lg-7">
+                    <h2 class="section-title">
+                        Request A meeting
+                    </h2>
+                    <form method="post" class="contact-form">
+                        <div class="row">
+                            <div class="form-floating">
+                                <input class="form-control" name="subject" placeholder="which Subject Do You Want Help With?" style="height: 100px"></input>
+                                <label>Which Subject Do You Want Help With?</label>
+                            </div>
+                            <div class="col-lg-12" style="margin-top: 30px;">
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="requestdescription" placeholder="Leave a comment here" style="height: 100px"></textarea>
+                                    <label>Your Message Here </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8 col-lg-7 col-md-6 col-xl-8">
+                                    </div>
+                                    <div class="col-md-4 col-lg-5 col-xl-4" style="margin-top: 30px;">
+                                        <button class="btn btn-primary" name="submit" id="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl-4 offset-xl-1 col-lg-5">
+                    <div class="contact-widget">
+                        <div class="widget-title-block">
+                            <h2 class="widget-title">What To Write</h2>
+                            <p class="widget-paragraph">1. What topic in the subject you want to discuss <br> 2. What types of content do you want to cover (practice questions, concepts, etc) <br> 3. The exact time you would prefer the meeting (however, do not expect the teacher to accept with the same request time).
+                            </p>
+                        </div>
                     </div>
                 </div>
-            <div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-    
-        <script src="" async defer></script>
-    </body>
-</html>
+
+
+
+
+
+                        </body>
+                        </html>

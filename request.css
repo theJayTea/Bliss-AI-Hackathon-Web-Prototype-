@@ -1,0 +1,367 @@
+.contact-section--l4 .contact-form .form-check-label {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 28px;
+  }
+  
+  /*
+    Contact -1
+  ---------------------------------*/
+  .contact-inner-1 {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+  
+  @media (min-width: 768px) {
+    .contact-inner-1 {
+      padding-top: 75px;
+      padding-bottom: 80px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .contact-inner-1 {
+      padding-top: 130px;
+      padding-bottom: 110px;
+    }
+  }
+  
+  .contact-inner-1 .contact-widget-box {
+    padding: 40px 45px 15px;
+  }
+
+  .section-title__description {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.61904;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .section-title__description {
+      font-size: 21px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .section-title__description {
+      margin-top: 0;
+    }
+  }
+
+  .section-title--l3 .section-title__description {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.875;
+    color: var(--color-texts-3);
+  }    
+
+  .section-title--l3 .section-title__sub-heading {
+    color: #ff5722;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.75;
+  }
+  
+  .section-title--l3 .section-title__heading {
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.2;
+    font-size: 30px;
+    color: var(--color-headings-2);
+  }
+  
+  @media (min-width: 768px) {
+    .section-title--l3 .section-title__heading {
+      font-size: 38px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .section-title--l3 .section-title__heading {
+      font-size: 45px;
+    }
+  }
+  
+  .section-title--l3 .section-title__description {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.875;
+    color: var(--color-texts-3);
+  }
+  
+.contact-form .form-check input.form-check-input,
+.contact-form-inner-2 .form-check input.form-check-input {
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.contact-form .form-check input.form-check-input:checked[type="checkbox"],
+.contact-form-inner-2 .form-check input.form-check-input:checked[type="checkbox"] {
+  background-color: var(--bs-secondary) !important;
+  box-shadow: none;
+}
+
+.contact-form .form-check input.form-check-input:focus,
+.contact-form-inner-2 .form-check input.form-check-input:focus {
+  box-shadow: none;
+}
+
+.contact-section .form-control,
+.contact-section .form-check-input {
+  border: 1px solid var(--border-color-3) !important;
+}
+
+@media (min-width: 992px) {
+    .contact-section--l3 .contact-widget-box {
+      margin-left: 30px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .contact-section--l3 .contact-widget-box {
+      margin-left: 95px;
+      margin-right: 0;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .contact-section--l3 .contact-widget-box {
+      margin-left: 100px;
+      margin-right: 80px;
+    }
+  }
+  
+  .contact-section--l3 .section-title__sub-heading {
+    margin-bottom: 10px;
+  }
+  
+  .contact-widget-box {
+    padding: 30px 30px 15px;
+    background-color: #5034fc;
+    border-radius: 15px;
+  }
+  
+  @media (min-width: 576px) {
+    .contact-widget-box {
+      padding: 40px 50px 15px;
+    }
+  }
+  
+  .contact-widget-box .widget--contact {
+    margin-bottom: 20px;
+  }
+  
+  .contact-widget-box__title-block {
+    padding-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+  }
+  
+  .contact-widget-box__title-block .widget-box__title {
+    color: #ffffff;
+    font-family: "Rubik", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 42px;
+    text-align: left;
+  }
+  
+  .contact-widget-box__title-block .widget-box__paragraph {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 28px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  
+@media (min-width: 992px) {
+    .contact-section--l4 .contact-widget-box,
+    .contact-section--inner-2 .contact-widget-box {
+      margin-left: 30px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .contact-section--l4 .contact-widget-box,
+    .contact-section--inner-2 .contact-widget-box {
+      margin-left: 95px;
+      margin-right: 0;
+    }
+  }
+  
+.widget--contact .widget-body--title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 26px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+.widget--contact .widget-body--title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 26px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  @media (min-width: 1400px) {
+    .contact-section--l4 .contact-widget-box,
+    .contact-section--inner-2 .contact-widget-box {
+      margin-left: 100px;
+      margin-right: 80px;
+    }
+  }
+  .contact-inner-1 .contact-widget-box {
+    padding: 40px 45px 15px;
+  }
+  
+  
+.widget--contact .widget-body p {
+    opacity: 0.7;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  
+.widget--contact .widget-body p {
+    opacity: 0.7;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .contact-widget-box__title-block {
+    padding-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+  }
+  
+  .contact-widget-box__title-block .widget-box__title {
+    color: #ffffff;
+    font-family: "Rubik", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 42px;
+    text-align: left;
+  }
+  
+  .contact-widget-box__title-block .widget-box__paragraph {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 28px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .contact-inner-1 {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+  
+  @media (min-width: 768px) {
+    .contact-inner-1 {
+      padding-top: 75px;
+      padding-bottom: 80px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .contact-inner-1 {
+      padding-top: 130px;
+      padding-bottom: 110px;
+    }
+  }
+  
+  .contact-inner-1 .contact-widget-box {
+    padding: 40px 45px 15px;
+  }
+
+  
+.contact-form .form-check input.form-check-input,
+.contact-form-inner-2 .form-check input.form-check-input {
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.contact-form .form-check input.form-check-input:checked[type="checkbox"],
+.contact-form-inner-2 .form-check input.form-check-input:checked[type="checkbox"] {
+  background-color: var(--bs-secondary) !important;
+  box-shadow: none;
+}
+
+.contact-form .form-check input.form-check-input:focus,
+.contact-form-inner-2 .form-check input.form-check-input:focus {
+  box-shadow: none;
+}
+
+.contact-form .form-check .form-check-label,
+.contact-form-inner-2 .form-check .form-check-label {
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+.contact-form .form-check input.form-check-input,
+.contact-form-inner-2 .form-check input.form-check-input {
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.contact-form .form-check input.form-check-input:checked[type="checkbox"],
+.contact-form-inner-2 .form-check input.form-check-input:checked[type="checkbox"] {
+  background-color: var(--bs-secondary) !important;
+  box-shadow: none;
+}
+
+.contact-form .form-check input.form-check-input:focus,
+.contact-form-inner-2 .form-check input.form-check-input:focus {
+  box-shadow: none;
+}
+
+.contact-form .form-check .form-check-label,
+.contact-form-inner-2 .form-check .form-check-label {
+  margin-left: 8px;
+  font-size: 13px;
+}

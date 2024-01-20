@@ -1,21 +1,43 @@
 <?php 
 include 'connection.php';
-if(!empty($_SESSION['id'])) {
+if(isset($_POST['submit'])) {
     $id = $_SESSION['id'];
-    $type = $_SESSION['type'];
-    if($type == 'student') {
-        $result = mysqli_query($conn, "SELECT * FROM student_account WHERE studentid = $id");
-        $row = mysqli_fetch_assoc($result);
-    }
-    else {
-        $result = mysqli_query($conn, "SELECT * FROM tutor_account WHERE tutorid = $id");
-        $row = mysqli_fetch_assoc($result);
-    }
-    
+    $meetingdescription = mysqli_real_escape_string($conn, $_POST['meetingdescription']);
+    $studentname = mysqli_real_escape_string($conn, $_POST['studentname']);    
+    $result = mysqli_query($conn, "SELECT * FROM meeting_request WHERE studentname = '$studentname' AND tutorid = '$id'");
+    $eee = mysqli_fetch_array($result);
+
+    $studentid = $eee['studentid'];
+    $grade = $eee['grade'];
+    $subject = $eee['subject'];
+    $tutorname = $eee['tutorname'];
+
+
+
+    mysqli_query($conn, "INSERT INTO meetings_accepted VALUES('', '$studentid', '$studentname', '$grade', '$subject', '$meetingdescription', '$id', '$tutorname', '')");
+
+    mysqli_query($conn, "DELETE FROM meeting_request WHERE tutorid = '$id' and studentname = '$studentname'");
+
+    header ("Location: index.php");
+
+
+
+
+
+
+
+
+
+
+
+    // $rr = mysqli_query($conn, "SELECT * FROM meeting_request WHERE requestdescription = '$reqdescription'");
+    // $rrr = mysqli_fetch_array($rr);
+    // $id = $rrr['meetingrequestid'];
+
+
+    // header ("meetingaccept.php?id={$rrr['meetingrequestid']}&desc={$description}");
 }
-else {
-    header('location: account login.php');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +53,9 @@ else {
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="account.css">
+        <link rel="stylesheet" href="request.css">
+        <link rel="stylesheet" href="meet.css">
 
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -153,25 +178,101 @@ else {
             </div>
         </nav>
 
-        
-        <div class="container">
-                <center><b><div class="header" style="margin-top: 100px; font-size:45px; margin-bottom: 30px;">Account details.</div></b></center>
-                
-            
+
+
+
+        <div class="service-area service-area--l5 bg-default-3">
+      <div class="container">
+        <div class="row justify-content-center">
+
+
+          <div class="col-xl-12 col-md-12 col-xs-12 aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+
+
+            <!-- <div class="card card--services-l5">
                 <div class="row">
-                    <div class="col">
-                        <?php
-                        echo("<p style='margin-bottom:20px;'><strong>Username: </strong>".$row['username']."</p>");
-                        echo ("<br>");
-                        echo("<p style='margin-bottom:20px;'><strong>Email: </strong>".$row['email']."</p>");
-                        echo ("<br>");
-                        echo("<p style='margin-bottom:20px;'><strong>Password: </strong>".$row['password']."</p>");
-                        echo ("<br>");
-                        ?>
-                <a href="logout.php">Logout</a>
+                    <div class="col-6">
+                        <h3 class="card--services-l5__heading">Tutor Name:</h3>
+                        <h3 class="card--services-l5__heading">Subject:</h3>
+                        <p class="card--services-l5__heading">Meeting Link:</p>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="card--services-l5__heading">Meeting Description:</h3>
                     </div>
                 </div>
-            <div>
+            </div> -->
+
+
+            <?php
+            
+            $tutorid = $_SESSION["id"];
+            $result2 = mysqli_query($conn, "SELECT * FROM meeting_request WHERE tutorid = '$tutorid'");
+
+
+            if(mysqli_num_rows($result2) != 0) {
+                echo '               <div class="header" style=" font-size:45px; margin-bottom: 30px;">Requested Meetings.</div>';
+
+
+                while($row = mysqli_fetch_array($result2)) {
+                    echo "
+                    <div class='card card--services-l5'>
+                        <div class='row'>
+                            <div class='col-6'>
+                                <h3 class='card--services-l5__heading'>Student Name: {$row['studentname']}</h3>
+                                <h3 class='card--services-l5__heading'>Subject: {$row['subject']}</h3>
+                                <h3 class='card--services-l5__heading'>Meeting Request Description: {$row['requestdescription']}</h3>
+
+
+
+                                
+                            </div>
+                            <div class='col-6'>
+
+                            <form method='post' class='contact-form'>
+              <div class='row'>
+                <div class='col-lg-12'>
+                  <div class='form-floating'>
+                    <textarea class='form-control' name='meetingdescription' placeholder='Leave a comment here' id='floatingTextarea3' style='height: 100px'></textarea>
+                    <label for='floatingTextarea3'>Your Message Here </label>
+                  </div>
+                  <div class='form-floating'>
+                  <input class='form-control' name='studentname' placeholder='which Subject Do You Want Help With?' id='floatingTextarea4' style='height: 100px'></input>
+                  <label for='floatingTextarea4'>RETYPE Student Name to CONFIRM</label>
+                  </div>
+                </div>
+                <div class='col-lg-12'>
+                  <div class='row align-items-center mt-3'>
+                    <div class='col-md-8 col-lg-7 col-md-6 col-xl-8 pt-3'>
+                    </div>
+                    <div class='col-md-4 col-lg-5 col-xl-4 text-md-end pt-3'>
+                      <button class='btn btn-primary shadow--primary-4 btn--lg-2 rounded-55 text-white' name='submit' id='submit'>Send Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+                            </div>
+                        </div>
+                    </div>";
+                    }
+            }
+            else {
+                
+            }
+                                
+            
+            ?>
+
+            
+        </div>
+      </div>
+    </div>
+
+
+
+
+
 
 
     

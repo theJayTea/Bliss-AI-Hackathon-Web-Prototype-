@@ -1,0 +1,51 @@
+.service-area {
+    padding-top: 60px;
+    padding-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+    .service-area {
+        padding-top: 80px;
+        padding-bottom: 55px;
+    }
+}
+
+@media (min-width: 992px) {
+    .service-area {
+        padding-top: 130px;
+        padding-bottom: 105px;
+    }
+}
+
+.card {
+    border: none;
+    padding-top: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 31px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+@media (min-width: 480px) {
+    .card {
+        padding-top: 35px;
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-bottom: 51px;
+    }
+}
+
+.card-heading {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.666666;
+    color: #262729;
+    margin-bottom: 17px;
+}
+
+.card:hover {
+    box-shadow: -3px 25px 50px rgba(23, 3, 48, 0.12);
+}

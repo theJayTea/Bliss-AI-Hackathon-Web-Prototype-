@@ -90,7 +90,7 @@ include 'connection.php';
                     echo '
 
                     <li class="nav-item redUnderline" id="underline">
-                    <a class="nav-link" href="">Manage Requests</a>
+                    <a class="nav-link" href="managerequests.php">Manage Requests</a>
                   </li>
 
 
