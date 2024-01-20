@@ -54,7 +54,7 @@ class Chatbot:
             model="gpt-4-vision-preview",
             messages=self.messages,
             temperature=1,
-            max_tokens=256,
+            max_tokens=650,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0,
@@ -66,9 +66,18 @@ class Chatbot:
         return assistant_message
 
 
-# chatbot = Chatbot(
-#    api_key="REMOVED FOR THE GITHUB PUSH")
+chatbot = Chatbot(api_key="REMOVED FOR THE GITHUB PUSH")
 
-# yay these work!
-# print(chatbot.get_response("Hello! Who are you?")
+# yay it works :)
+
+# print(chatbot.get_response("Hello! Who are you?"))
 # print(chatbot.get_response("What do you know about me?"))
+
+# print(chatbot.get_response("Hello! What is the capital of France?"))
+# print(chatbot.get_response("What is it famous for?"))
+
+# print(
+#    chatbot.get_response(
+#        "Hello! Can you explain this to me?", r"/Users/jesaitarun/Desktop/Flask/pic.jpg"
+#    )
+# )
