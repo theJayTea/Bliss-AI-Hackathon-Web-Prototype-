@@ -177,5 +177,103 @@ include 'connection.php';
         <!--/ .about-us Content -->
     </div>
 </div>
-</body>
+
+<div class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h6 class="section-sub-heading">Our Main Functions</h6>
+                    <h2 class="section-heading">Providing Quality Education To All</h2>
+                </div>
+            </div>
+        </div>
+        <div class="widgets">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-xs-6 single-widget">
+                    <div class="widget">
+                        <div class="widget-circle">
+                            <h2 class="widget-circle-content">
+                                1</h2>
+                        </div>
+                        <h4 class="widget-title">Online Video-Chat</h4>
+                        <p class="widget-text">Request an online video-chat with our tutors on any topic that you want. We'll make sure they speak your language and fit other required criteria.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-6 single-widget">
+                    <div class="widget">
+                        <div class="widget-circle">
+                            <h2 class="widget-circle-content">
+                                2</h2>
+                        </div>
+                        <h4 class="widget-title">Tasks and Assessments</h4>
+                        <p class="widget-text">After our sessions, our teachers can create assessments to test your clarity on the concept to locate and better address your weaknesses.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-6 single-widget">
+                    <div class="widget">
+                        <div class="widget-circle">
+                            <h2 class="widget-circle-content">
+                                3</h2>
+                        </div>
+                        <h4 class="widget-title">AI Tutor</h4>
+                        <p class="widget-text">As tutors won't always be free, due to the number of variables that constrict them (language barriers, time zones, or even simply being booked out), our AI tutor acts as a replacement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <div class="container">
+        <div class="border-top border-default-2">
+            <div class="row align-items-center justify-content-center" style="margin-top: 100px;">
+                <div class="col-lg-4 col-md-10 col-xs-11">
+                    <!-- Section Title -->
+                    <div class="section-title text-center">
+                        <h2 class="section-heading">Our Video- Chats Feature</h2>
+                        <p class="section-description">Our video chat feature connects volunteer tutors and underprivileged students for real-time, personalized learning experiences, overcoming geographical barriers.</p>
+                    </div>
+                    <!--/ .Section Title -->
+                </div>
+                <div class="col-xxl-5 col-lg-4 col-md-6 col-xs-9">
+                    <div class="content-img text-center">
+                        <img class="w-100" src="./img/howtddouse.jpg" alt="" style="height:100%; background-size:cover;">
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-xs-9">
+                    <div class="content-right">
+                        <!-- Single Services -->
+                        <div class="widgets">
+                            <h5 class="widgets-title"><b>Assessments</b></h5>
+                            <p class="widgets-content">After assessments, tutors are allowed to give comments on students, their performace, behaviour, etc. This information is used by the AI to better answer their questions specific to student</p>
+                        </div>
+                        <!--/ .Single Services -->
+                        <!-- Single Services -->
+                        <div class="widgets">
+                            <h5 class="widgets-title"><b>AI Tutor</b></h5>
+                            <p class="widgets-content">Our heavily customised tutor is built to guide you through your questions to help give them a answer, meaning that unless directly asked, it will not give the direct answer and instead, help you figure it out yourself.</p>
+                        </div>
+
+                        <!--/ .Single Services -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    
+        <script src="" async defer></script>
+    </body>
 </html>

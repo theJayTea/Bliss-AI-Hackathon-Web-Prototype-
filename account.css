@@ -1,0 +1,109 @@
+.form-container .form-image {
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40%;
+}
+
+@media (min-width: 1200px) {
+  .form-container .form-image {
+    width: 45%;
+  }
+}
+
+.form-container .title-heading {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 992px) {
+  .form-container .form-box {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-container .form-box {
+    margin-right: 40px;
+  }
+}
+
+.form-container .form-box form input {
+  height: 56px !important;
+  margin-bottom: 24px;
+}
+
+.form-container .form-box form .form-check {
+  margin-top: 40px;
+}
+
+.form-container .form-box form .form-check-label {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 32px;
+  color: var(--color-headings-2);
+  margin-left: 11px;
+}
+
+.buttons p,
+.buttons a {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 32px;
+}
+
+.buttons p {
+  color: var(--color-headings-2);
+}
+
+.contact-form .form-floating label {
+  padding-left: 25px;
+  font-size: 15px;
+  min-height: 45px;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: rgba(38, 39, 41, 0.5);
+}
+
+.contact-form .form-floating textarea {
+  min-height: 175px;
+}
+
+.contact-form .form-floating textarea ~ label {
+  margin-top: 20px;
+}
+
+.contact-form .form-floating input ~ label {
+  display: flex;
+  align-items: center;
+}
+
+.contact-form .form-control {
+  background: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 0;
+  font-size: 15px;
+}
+
+.contact-form input.form-control {
+  border-radius: 500px;
+  background: #fff;
+  color: #262729;
+  height: 45px !important;
+}
+
+.contact-form input.form-control::-moz-placeholder {
+  color: transparent;
+}
+
+.contact-form input.form-control:-ms-input-placeholder {
+  color: transparent;
+}
+
+.contact-form input.form-control::placeholder {
+  color: transparent;
+}
