@@ -1,118 +1,79 @@
 <html>
 <head>
-    <title>Chatbot Tutor</title>
+    <title>Meet Bliss - your tutor!</title>
     <!-- Let's add a link to the Bootstrap CDN, shall we? -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Time to link our own CSS file -->
     <style>
-        /* Alright, let's grab the body element and give it some style */
         body {
-            /* How about a light blue background? */
             background-color: #f0f8ff;
-            /* And let's make the font Arial, because why not? */
             font-family: Arial, sans-serif;
         }
 
-        /* Now, let's make that h1 element pop! */
         h1 {
-            /* A dark blue color should do the trick */
             color: #003366;
-            /* And let's center the text while we're at it */
             text-align: center;
         }
 
-        /* Next up, the p element */
         p {
-            /* A gray color should look nice */
             color: #808080;
-            /* And let's center this text too */
             text-align: center;
         }
 
-        /* Now, let's style the form element */
         form {
-            /* Centering the form should make it look nice */
             margin: 0 auto;
-            /* And let's make it take up half the screen */
             width: 50%;
         }
 
-        /* Time to style the input element */
         input {
-            /* Let's make it take up the full width of the form */
             width: 100%;
-            /* And set the height to 40 pixels */
             height: 40px;
-            /* A thin solid gray border should look nice */
             border: 1px solid #808080;
-            /* And let's add some padding and margin for good measure */
             padding: 10px;
             margin: 10px;
         }
 
-        /* Now, let's make that button element look good */
         button {
-            /* Full width of the form? Check. */
             width: 100%;
-            /* Height of 40 pixels? Check. */
             height: 40px;
-            /* Dark blue background? Check. */
             background-color: #003366;
-            /* White text? Check. */
             color: white;
-            /* No border? Check. */
             border: none;
-            /* And some padding and margin to finish it off */
             padding: 10px;
             margin: 10px;
         }
 
-        /* Let's style the div element with the id conversation_history */
         #conversation_history {
-            /* Half the screen width should do */
             width: 50%;
-            /* And let's make the height 400 pixels */
             height: 400px;
-            /* A thin solid gray border will look nice */
             border: 1px solid #808080;
-            /* And some padding and margin for good measure */
             padding: 10px;
             margin: 10px auto;
-            /* If the content is too long, let's show some scroll bars */
             overflow: auto;
         }
 
-        /* Time to style the li element */
         li {
-            /* No bullets for this list */
             list-style: none;
-            /* And some margin to space things out */
             margin: 10px;
         }
 
-        /* Let's style the li element that has the user role */
         li[user] {
-            /* A dark blue color should look nice */
             color: #003366;
-            /* And let's align the text to the right */
             text-align: right;
         }
 
-        /* Finally, let's style the li element that has the assistant role */
         li[assistant] {
-            /* A gray color will look nice */
             color: #808080;
-            /* And let's align this text to the left */
             text-align: left;
         }
     </style>
 </head>
 
 <body class="container">
-    <!-- Let's add some flair to the h1 element with the class display-4 -->
-    <h1 style="color: #003366;" class="display-4">Chatbot Tutor</h1>
+    <!-- adding some flair to the h1 element with the class display-4... -->
+    <h1 style="color: #003366;" class="display-4">Meet Bliss - your tutor!</h1>
     <!-- And let's make the p element lead the way -->
-    <p class="lead">Enter your question or upload an image and click submit to get a response from the chatbot.</p>
+    <p class="lead">Enter your question (you could upload an image too) and click submit to talk to Bliss.</p>
     <!-- Let's group the form elements together with the class form-group -->
     <form class="form-group" action="/get_response" method="POST">
         <!-- Let's make the input element look nice with the class form-control -->
