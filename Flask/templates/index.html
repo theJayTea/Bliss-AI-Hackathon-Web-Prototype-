@@ -1,9 +1,7 @@
 <html>
 <head>
     <title>Meet Bliss - your tutor!</title>
-    <!-- Let's add a link to the Bootstrap CDN, shall we? -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Time to link our own CSS file -->
     <style>
         body {
             background-color: #f0f8ff;
@@ -70,24 +68,15 @@
 </head>
 
 <body class="container">
-    <!-- adding some flair to the h1 element with the class display-4... -->
     <h1 style="color: #003366;" class="display-4">Meet Bliss - your tutor!</h1>
-    <!-- And let's make the p element lead the way -->
     <p class="lead">Enter your question (you could upload an image too) and click submit to talk to Bliss.</p>
-    <!-- Let's group the form elements together with the class form-group -->
     <form class="form-group" action="/get_response" method="POST">
-        <!-- Let's make the input element look nice with the class form-control -->
         <input class="form-control" type="text" name="user_prompt" placeholder="Enter your question here">
-        <!-- And let's do the same for the file input element -->
         <input class="form-control-file" type="file" name="image_path" accept="image/*">
-        <!-- Finally, let's make the button look good with the classes btn and btn-primary -->
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
-    <!-- Let's make the div element look like a card with the class card -->
     <div class="card" id="conversation_history">
-        <!-- And let's make the ul element look nice with the class card-body -->
         <ul class="card-body">
-            <!-- This is where the magic happens - the conversation history will be displayed here -->
         </ul>
     </div>
     <script>
