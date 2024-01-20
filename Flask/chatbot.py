@@ -6,7 +6,7 @@ from openai import OpenAI
 grade = "11"
 primary_language = "English"
 curriculum = "IB"
-subject = "Languages"
+subject = "Math and Science"
 student_name = "Jesai"
 tutors_notes = "none"
 

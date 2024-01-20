@@ -4,13 +4,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f0f8ff;
+            background-image: url('background.png');
             font-family: Arial, sans-serif;
         }
 
         h1 {
             color: #003366;
             text-align: center;
+            margin-top: 25px;
         }
 
         p {
@@ -72,10 +73,17 @@
     <h1 style="color: #003366;" class="display-4">Meet Bliss, your AI tutor :)</h1>
     <p class="lead">Enter your question (you could upload an image too!) and click Ask to talk to Bliss.</p>
     <form class="form-group" action="/get_response" method="POST">
+        <div class="btn-group" role="group">
+            <button class="btn btn-primary" type="submit">General</button>
+            <button class="btn btn-primary" type="submit">Science/Math</button>
+            <button class="btn btn-primary" type="submit">Language</button>
+        </div>
         <input class="form-control" type="text" name="user_prompt" placeholder="Enter your question here">
         <input class="form-control-file" type="file" name="image_path" accept="image/*">
         <button class="btn btn-primary" type="submit">Ask</button>
     </form>
+    
+    
     <div class="card" id="conversation_history">
         <ul class="card-body">
         </ul>
