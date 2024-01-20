@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Meet Bliss - your tutor!</title>
+    <title>Bliss :)</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -62,24 +62,99 @@
 
         li[assistant] {
             color: #808080;
+
             text-align: left;
         }
     </style>
 </head>
 
 <body class="container">
-    <h1 style="color: #003366;" class="display-4">Meet Bliss - your tutor!</h1>
-    <p class="lead">Enter your question (you could upload an image too) and click submit to talk to Bliss.</p>
+    <h1 style="color: #003366;" class="display-4">Meet Bliss, your AI tutor :)</h1>
+    <p class="lead">Enter your question (you could upload an image too!) and click Ask to talk to Bliss.</p>
     <form class="form-group" action="/get_response" method="POST">
         <input class="form-control" type="text" name="user_prompt" placeholder="Enter your question here">
         <input class="form-control-file" type="file" name="image_path" accept="image/*">
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Ask</button>
     </form>
     <div class="card" id="conversation_history">
         <ul class="card-body">
         </ul>
     </div>
     <script>
+        // geting the form element and the conv hist div
+        const form = document.querySelector("form");
+        const conversationHistoryDiv = document.getElementById("conversation_history");
+
+        // and now getting the ul (don't change the name pls) element inside the conversation history div
+        const conversationHistoryUl = conversationHistoryDiv.querySelector("ul");
+
+        // to create a new SpeechRecognition object (see the Web Speech API docs!)
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false; // we only want the final results
+        recognition.maxAlternatives = 1; // and just one alternative
+
+        // creating a new SpeechSynthesis object (again the Web Speech API docs mwah)
+        const synthesis = window.speechSynthesis;
+
+        // adding an event listener to the input box to start speech recognition when it's clicked, and next fill the input box with the transcribed speech
+        form.user_prompt.addEventListener('click', () => {
+            recognition.start();
+        });
+
+        recognition.addEventListener('result', (event) => {
+            form.user_prompt.value = event.results[0][0].transcript;
+        });
+
+        // adding an event listener for the submit event
+        form.addEventListener("submit", (event) => {
+            // we gotta do this to prevent the default behavior of the form or it doesn't work idk why
+            event.preventDefault();
+
+            // getting the form data, and then the user prompt from the form data
+            const formData = new FormData(form);
+            const userPrompt = formData.get("user_prompt");
+
+            // create a li element for the user prompt (yes it's called li)
+            const userPromptLi = document.createElement("li");
+
+
+            // set the text content of the li element to the user prompt and also appending the li element to the ul element
+            userPromptLi.textContent = "User: " + userPrompt;
+            conversationHistoryUl.appendChild(userPromptLi);
+
+            // sending a POST request to the /get_response route with the form data (see flask docs, Sparsh don't touch this)
+            fetch("/get_response", {
+                method: "POST",
+                body: formData
+            })
+                .then((response) => response.text()) // geting the response text
+                .then((text) => {
+                    // creating a li element for the chatbot response
+                    const chatbotResponseLi = document.createElement("li");
+
+                    // setting the text content of the li element to the chatbot response
+                    chatbotResponseLi.textContent = "Bliss: " + text;
+
+                    // and appending the li element to the ul element
+                    conversationHistoryUl.appendChild(chatbotResponseLi);
+
+                    // finally to speak the chatbot response! (web speech api docs againn)
+                    if ('speechSynthesis' in window) {
+                        const utterance = new SpeechSynthesisUtterance(text);
+                        if (synthesis.speaking || synthesis.pending) {
+                            synthesis.cancel(); // If it's currently speaking, cancel it.
+                        }
+                        synthesis.speak(utterance);
+                    } else {
+                        console.log('This browser does not support speech synthesis, stop using IE please.');
+                    }
+                })
+                .catch((error) => {
+                    // annnd handling any errors
+                    console.error(error);
+                });
+        });
     </script>
 </body>
 </html>
