@@ -1,5 +1,6 @@
-from chatbot import Chatbot  # importing the chatbot class
 from flask import Flask, render_template, request
+
+from chatbot import Chatbot  # importing the chatbot class
 
 app = Flask(__name__)  # creating the flask app object
 # creating the chatbot object to work on later
