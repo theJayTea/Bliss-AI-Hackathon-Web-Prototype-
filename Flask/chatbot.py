@@ -48,3 +48,27 @@ class Chatbot:
                     },
                 }
             )
+        self.messages.append(user_message)
+
+        response = self.client.chat.completions.create(
+            model="gpt-4-vision-preview",
+            messages=self.messages,
+            temperature=1,
+            max_tokens=256,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+        )
+
+        assistant_message = response.choices[0].message.content
+        self.messages.append({"role": "assistant", "content": assistant_message})
+
+        return assistant_message
+
+
+# chatbot = Chatbot(
+#    api_key="REMOVED FOR THE GITHUB PUSH")
+
+# yay these work!
+# print(chatbot.get_response("Hello! Who are you?")
+# print(chatbot.get_response("What do you know about me?"))
