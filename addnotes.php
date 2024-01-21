@@ -3,6 +3,19 @@ include 'connection.php';
 
 
 
+if(isset($_SESSION['id'])) {
+    if(isset($_POST['submit'])) {
+        $tutorid = $_SESSION["id"];
+        $studentid = $_GET["id"];
+        $result = mysqli_query($conn, "SELECT * FROM tutor_account WHERE tutorid = '$tutorid'");
+        $result2 = mysqli_fetch_array($result);
+        $tutorname = $result2["username"];
+        $tutornote = $_POST["tutornote"];
+        mysqli_query($conn, "INSERT INTO tutor_notes VALUES('', '$studentid', '$tutorid', '$tutorname', '$tutornote')");
+        header ('location: assigntasks.php');
+    }
+}
+
 
 ?>
 
@@ -21,7 +34,6 @@ include 'connection.php';
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="account.css">
         <link rel="stylesheet" href="request.css">
-        <link rel="stylesheet" href="meet.css">
 
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -144,95 +156,50 @@ include 'connection.php';
             </div>
         </nav>
 
-
-
-
-
-
-
-
-        <div class="container">
-                <center><div class="header" style="margin-top: 100px; font-size:45px; margin-bottom: 30px;">Your Tasks and Assessments.</div></center>
-                <center><div class="header" style="margin-top: 10px; font-size:22px; margin-bottom: 100px;">Stick to your deadlines and do your best in your tasks!</div></center>
-                
-            </div>
-
-            <div class="service-area">
-    <div class="container">
+        
+        <div class="container" style="margin-top: 50px;">
+                <div class="contact-section contact-inner-1 bg-default-3 border-bottom border-default-color-3">
+      <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-12 col-md-12 col-xs-12">
-                <?php
-                $studentid = $_SESSION["id"];
-                $result = mysqli_query($conn, "SELECT * FROM task_assign WHERE studentid = '$studentid'");
-                $result2 = mysqli_query($conn, "SELECT * FROM task_submit WHERE studentid = '$studentid'");
-                $result3 = mysqli_query($conn, "SELECT * FROM task_graded WHERE studentid = '$studentid'");
-                if(mysqli_num_rows($result) != 0 or mysqli_num_rows($result2) != 0 or mysqli_num_rows($result3) != 0) {
-                    if(mysqli_num_rows($result)) {
-
-                    if(mysqli_num_rows($result) != 0){
-                        echo '<div class="header" style=" font-size:45px; margin-bottom: 30px;">Pending Work</div>';
-                    }
-                    while($row = mysqli_fetch_array($result)) {
-                        echo "
-                        <a href='submittask.php?id={$row['taskid']}'><div class='card'>
-                            <div class='row'>
-                                <div class='col-6'>
-                                    <h3 class='card-heading'>Task Name: {$row['taskname']}</h3>
-                                    <h3 class='card-heading'>Tutor Name: {$row['tutorname']}</h3>
-                                    <p class='card-heading'>Subject: {$row['subject']}</p>
-                                </div>
-                                <div class='col-6'>
-                                    <h3 class='card-heading'>Description: {$row['taskdescription']}</h3>
-                                </div>
-                            </div>
-                        </div>";
-                    }
-                }
-
-                    if(mysqli_num_rows($result2) != 0){
-                        echo '<div class="header" style=" font-size:45px; margin-bottom: 30px;">Submitted Work</div>';
-                    }
-                    while($row = mysqli_fetch_array($result2)) {
-                        echo "
-                        <a href='submittask.php?id={$row['tasksubmitid']}'><div class='card'>
-                            <div class='row'>
-                                <div class='col-6'>
-                                    <h3 class='card-heading'>Task Name: {$row['taskname']}</h3>
-                                    <h3 class='card-heading'>Tutor Name: {$row['tutorname']}</h3>
-                                    <p class='card-heading'>Subject:{$row['totalmarks']}</p>
-                                </div>
-                                <div class='col-6'>
-                                    <h3 class='card-heading'>Description: {$row['taskdescription']}</h3>
-                                </div>
-                            </div>
-                        </div>";
-                    }
-
-
-                    if(mysqli_num_rows($result3) != 0){
-                        echo '<div class="header" style=" font-size:45px; margin-bottom: 30px;">Graded Work</div>';
-                    }
-                    while($row = mysqli_fetch_array($result3)) {
-                        echo "
-                        <a href='submittask.php?id={$row['taskid']}'><div class='card'>
-                            <div class='row'>
-                                <div class='col-6'>
-                                    <h3 class='card-heading'>Task Name: {$row['taskname']}</h3>
-                                    <h3 class='card-heading'>Tutor Name: {$row['tutorname']}</h3>
-                                    <p class='card-heading'>Score:{$row['marksachieved']}/{$row['totalmarks']}</p>
-                                </div>
-                                <div class='col-6'>
-                                    <h3 class='card-heading'>Take a look: {$row['feedbackdescription']}</h3>
-                                </div>
-                            </div>
-                        </div>";
-                    }
-                }
-                ?>
+          <div class="col-xl-10 col-lg-10 mb-10 mb-lg-0">
+            <div class="section-title section-title--l3 text-left mb-5 mb-md-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+              <h2 class="section-title__heading mb-4">
+                Send A Message
+              </h2>
+              <p class="section-title__description">When, while lovely valley teems with vapour around meand <br class="d-none d-xs-block"> meridian the upper impenetrable.</p>
             </div>
+            <form method="post" class="contact-form aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" name="tutornote" placeholder="Leave a comment here" id="floatingTextarea3" style="height: 100px"></textarea>
+                    <label for="floatingTextarea3">Your Message Here</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="row align-items-center mt-3">
+                    <div class="col-md-8 col-lg-7 col-md-6 col-xl-8 pt-3">
+
+                    </div>
+                    <div class="col-md-4 col-lg-5 col-xl-4 text-md-end pt-3">
+                      <button class="btn btn-primary shadow--primary-4 btn--lg-2 rounded-55 text-white" name="submit" id="submit">Send Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+
+
+
+
+
+
+
 
 
 

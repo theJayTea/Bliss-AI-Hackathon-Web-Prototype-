@@ -106,7 +106,7 @@ include 'connection.php';
                 </li>
 
                 <li class="nav-item redUnderline" id="underline">
-                <a class="nav-link" href="">Assign Tasks</a>
+                <a class="nav-link" href="assigntasks.php">Assign Tasks</a>
               </li>
 
                   ';
