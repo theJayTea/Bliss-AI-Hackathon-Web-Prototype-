@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paradigm - Tutor Talk</title>
+  </head>
+  <body style="background-image: url('background.png');">
+    <h1>Hello! Please turn on your camera :)</h1>
+    <div class="videos">
+      <span>
+        <h3>You</h3>
+        <video id="webcamVideo" autoplay playsinline></video>
+      </span>
+      <span>
+        <h3>Tutor</h3>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </span>
+
+
+    </div>
+
+    <button id="webcamButton">Turn on camera</button>
+    <h1>⬇️ Options:</h1>
+    <h2>📞 Create a new Call</h2>
+    <button id="callButton" disabled>Create Call</button>
+
+    <h2>📲 Join a tutor's Call</h2>
+    <p>Paste the Call's link in here to join!</p>
+    
+    <input id="callInput" />
+    <button id="answerButton" disabled>Join</button>
+
+    <h2>🛑 Hangup</h2>
+
+    <button id="hangupButton" disabled>Hangup</button>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
