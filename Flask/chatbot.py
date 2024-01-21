@@ -2,14 +2,6 @@ import base64  # we'll need this if we wanna parse local images according to the
 
 from openai import OpenAI
 
-# these are the student variables
-grade = "11"
-primary_language = "English"
-curriculum = "IB"
-subject = "Math and Science"
-student_name = "Jesai"
-tutors_notes = "none"
-
 
 class Chatbot:
     def __init__(self, api_key):
@@ -72,12 +64,19 @@ class Chatbot:
         return assistant_message
 
 
+grade = "11"
+primary_language = "English"
+curriculum = "IB"
+subject = "Languages"
+student_name = "Jesai Tarun"
+tutors_notes = "none"
+
 chatbot = Chatbot(api_key="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")
 
 # yay it works :)
 
 # print(chatbot.get_response("Hello! Who are you?"))
-# print(chatbot.get_response("What do you know about me?"))
+print(chatbot.get_response("What do you know about me?"))
 
 # print(chatbot.get_response("Hello! What is the capital of France?"))
 # print(chatbot.get_response("What is it famous for?"))
