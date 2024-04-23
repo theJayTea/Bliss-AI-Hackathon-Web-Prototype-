@@ -15,8 +15,11 @@ Bliss AI eliminates barriers. Non-literate students can speak in their native to
 Bliss AI isn't a replacement for teachers; it's a powerful extension. Educators on their end provide input on a student's learning profile (this is something the face-to-face educator would know best, making them a cornerstone of enabling Bliss AI to be successful outside the classroom), enabling Bliss AI to offer truly personalized support outside the classroom.
 
 2. Beyond Tutoring — the Bliss platform goes further to aid after school education:
+   
 ➡️ Marks Insight Tool: Students enter their grades, and AI analyzes their performance to offer tailored insights for improvement. For educators, this provides class-wide trends and actionable data.
+
 ➡️ AI Schedule Creator: This feature helps students build study timetables based on their target areas, prioritizing where they need the most support.
+
 ➡️ Gamified To-Do List: Subject-specific tasks (which can be set by educators) are presented as a rewarding game, motivating students with daily goals.
 
 # Technology:
