@@ -5,7 +5,7 @@ Furthermore, a stark lack of personalized attention hinders even well-intentione
 
 # Here's how the Bliss platform works:
 
-1. The AI Tutor:
+#The AI Tutor:
 At the heart of Bliss platform is Bliss AI, a cutting-edge tutoring system that adapts to each student's needs. It understands each child's curriculum, grade level, language preferences, and learning difficulties. This allows Bliss AI to communicate in the way the student learns best, breaking down complex subjects into simple explanations and fostering critical thinking rather than just providing answers.
 
    Accessibility:
@@ -16,7 +16,7 @@ Bliss AI isn't a replacement for teachers; it's a powerful extension. Educators 
 
 
 
-2. Beyond Tutoring — the Bliss platform goes further to aid after school education:
+# Beyond Tutoring — the Bliss platform goes further to aid after school education:
    
 ➡️ Marks Insight Tool: Students enter their grades, and AI analyzes their performance to offer tailored insights for improvement. For educators, this provides class-wide trends and actionable data.
 
